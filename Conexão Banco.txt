@@ -1,1 +1,0 @@
-mongosh "mongodb+srv://bercolas.9i5d78t.mongodb.net/" --apiVersion 1 --username BernardoWehmuth
