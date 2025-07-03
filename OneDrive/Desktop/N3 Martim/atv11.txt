@@ -1,8 +1,0 @@
-db.Musicas.aggregate([
-  {
-    $group: {
-      _id: "$artista",
-      mediaFaixasPorDisco: { $avg: { $size: "$faixas" } }
-    }
-  }
-])

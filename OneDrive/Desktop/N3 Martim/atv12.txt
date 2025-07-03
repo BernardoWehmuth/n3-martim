@@ -1,4 +1,0 @@
-db.Musicas.updateOne(
-  { "faixas.compositores": "Michael Jackson" },
-  { $pop: { faixas: 1 } }
-)

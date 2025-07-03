@@ -1,4 +1,0 @@
-db.Musicas.updateOne(
-  { titulo: "The Dark Side of the Moon" },
-  { $addToSet: { generos: "Rock Progressivo" } }
-)
