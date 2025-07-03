@@ -1,0 +1,19 @@
+db.Musicas.aggregate([
+  {
+    $addFields: {
+      duracaoTotalSegundos: { $sum: "$faixas.duracao_segundos" }
+    }
+  },
+  {
+    $addFields: {
+      duracaoTotalMinutos: { $divide: ["$duracaoTotalSegundos", 60] }
+    }
+  },
+  {
+    $project: {
+      titulo: 1,
+      artista: 1,
+      duracaoTotalMinutos: { $round: ["$duracaoTotalMinutos", 2] }
+    }
+  }
+])

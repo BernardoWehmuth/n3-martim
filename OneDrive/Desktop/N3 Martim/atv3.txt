@@ -1,0 +1,4 @@
+db.Musicas.updateMany(
+  {},
+  { $unset: { numeroCatalogo: "" } }
+)
