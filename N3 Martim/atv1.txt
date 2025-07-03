@@ -1,0 +1,8 @@
+db.Musicas.aggregate([
+  {
+    $group: {
+      _id: "$artista",
+      totalDiscos: { $sum: 1 }
+    }
+  }
+])

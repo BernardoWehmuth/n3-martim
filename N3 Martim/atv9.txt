@@ -1,0 +1,20 @@
+db.Musicas.aggregate([
+  {
+    $unwind: "$faixas"
+  },
+  {
+    $sort: { "faixas.duracao_segundos": -1 }
+  },
+  {
+    $limit: 1
+  },
+  {
+    $project: {
+      _id: 0,
+      tituloAlbum: "$titulo",
+      tituloMusica: "$faixas.titulo",
+      duracao_segundos: "$faixas.duracao_segundos",
+      artista: "$artista"
+    }
+  }
+])

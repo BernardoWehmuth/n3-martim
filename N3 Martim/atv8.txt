@@ -1,0 +1,10 @@
+db.Musicas.updateOne(
+  { "faixas.compositores": "David Gilmour" },
+  { $set: { "faixas.$[elem].compositores.$[compElem]": "David Allan Gilmour" } },
+  {
+    arrayFilters: [
+      { "elem.compositores": "David Gilmour" },
+      { "compElem": "David Gilmour" }
+    ]
+  }
+)
